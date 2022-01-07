@@ -1,0 +1,11 @@
+<?php  
+ob_start();
+session_start();
+include'../connect/connect.php';
+if(isset($_SESSION['admin'])){
+	session_destroy();
+	header('location:login.php');
+}else{
+	header('location:../index.php');
+}
+?>
